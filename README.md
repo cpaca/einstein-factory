@@ -54,27 +54,6 @@ Now you need to go to your repository settings > `Secrets and variables` > `Acti
 - Populate the [`info.json`](info.json) file with correct values _(the `version` field gets updated automatically)_
 - Add the corresponding text into [`locale.cfg`](locale/en/locale.cfg)
 - Add a `thumbnail.png` to the root of the repository _([ideally 144x144px](https://wiki.factorio.com/Tutorial:Mod_structure#Files))_
-
-# Misc
-
-## How the packaging works
-
-The [`semantic-release-factorio` plugin](https://github.com/fgardt/semantic-release-factorio) uses the `git archive` command to package the mod. \
-That way you can specify what folders / files to exclude from your packaged mod by specifying them in [`.gitattributes`](.gitattributes).
-
-If you want to locally test packaging of your mod you can run the following command:
-```sh
-git archive --format zip --prefix [YOUR-MOD-NAME]/ --worktree-attributes --output [YOUR-MOD-NAME]_[VERSION].zip HEAD
-```
-
-## Changing the commit message convention
-
-If you want to change the commit message convention you can do so by changing the 2 `preset` fields in the [`.releaserc.json`](.releaserc.json) file. \
-Possible presets are: [`angular`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular), [`atom`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-atom), [`codemirror`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-codemirror), [`ember`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-ember), [`eslint`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-eslint), [`express`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-express), [`jquery`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-jquery), [`jshint`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-jshint), [`conventionalcommits`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-conventionalcommits).
-
-Additionally you also need to modify the worflow file [`.github/workflows/release.yml`](.github/workflows/release.yml) to use the package that corresponds to your chosen preset. \
-Replace `conventional-changelog-conventionalcommits` with `conventional-changelog-[YOUR PRESET]` accordingly.
-
 ## Need help?
 
 Checkout the [official Factorio Discord](https://discord.gg/factorio) and check the pins in the `#mod-making` channel. \
