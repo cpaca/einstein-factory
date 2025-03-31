@@ -1,0 +1,7 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2025-03-31
+  Bugfixes:
+    - Fix info.json so it can be uploaded to mod portal.
+  Changes:
+    - Add data.lua
