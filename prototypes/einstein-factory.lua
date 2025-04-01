@@ -45,6 +45,7 @@ data:extend({
         icon = einstein_factory_icon, -- TODO: get the quantum stabilizer icon
         icon_size = 64,
         flags = {"placeable-neutral", "placeable-player"},
+        minable = {mining_time = 0.2, result = "einstein-factory"},
         fast_replaceable_group = "einstein-factory",
         max_health = 500,
         -- TODO: Circuit stuff?
