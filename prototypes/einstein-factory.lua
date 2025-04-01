@@ -73,10 +73,17 @@ data:extend({
 prereq_tech_name = "promethium-science-pack"
 prereq_tech = data.raw["technology"][prereq_tech_name]
 tech_price = {
-    count = prereq_tech["unit"]["count"] * 1, -- right now i want *1, might want *2 in the future though
     ingredients = prereq_tech["ingredients"],
     time = prereq_tech["time"]
 }
+-- Currently want *1, might change to *2 or *5 in the future though.
+price_mult = 1
+if prereq_tech["unit"]["count"] ~= nil then
+    tech_price["count"] = prereq_tech["unit"]["count"] * price_mult
+else
+    -- For whatever reason, promethium science packs use a count_formula even though it's a constant 2k.
+    tech_price["count_formula"] = "(" .. prereq_tech["unit"]["count_formula"] .. ")*" .. price_mult
+end
 
 data:extend({
     {
