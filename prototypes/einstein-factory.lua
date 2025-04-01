@@ -66,7 +66,7 @@ data:extend({
             usage_priority = "secondary-input",
             emissions_per_minute = {} -- I mean emissions don't really make sense, what would be emitting? CO2?
         },
-        energy_usage = (90.0*30.0/31.0) .. "GW", -- seems like it adds 1/30th of 
+        energy_usage = (90.0*30.0/31.0) .. "GW", -- seems like it adds 1/30th of the energy usage as a passive usage.
         graphics_set = graphics["graphics_set"],
         fluid_boxes = {}, -- # no fluid input or output expected for this one.
         -- fluid_boxes_off_when_no_fluid_recipe = false,
