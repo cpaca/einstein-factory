@@ -32,7 +32,12 @@ data:extend({
             {type = "item", name = "promethium-asteroid-chunk", amount = 100},
             {type = "fluid", name = "fluoroketone-cold", amount = 1000},
         },
-        results = {{type = "item", name = "einstein-factory", amount = 1}}
+        results = {{type = "item", name = "einstein-factory", amount = 1}},
+        allow_consumption = true,
+        allow_speed = true,
+        allow_productivity = false,
+        allow_pollution = true,
+        allow_quality = true
     }
 })
 
