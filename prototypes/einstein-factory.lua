@@ -71,7 +71,7 @@ data:extend({
 -- The prerequisite tech. This tech's price is the same as the root's.
 -- I kinda wanna make it x5 but... that's 10k of each science pack for promethium, so nevermind.
 prereq_tech_name = "promethium-science-pack"
-prereq_tech = data["technology"][prereq_tech_name]
+prereq_tech = data.raw["technology"][prereq_tech_name]
 tech_price = {
     count = prereq_tech["unit"]["count"] * 1, -- right now i want *1, might want *2 in the future though
     ingredients = prereq_tech["ingredients"],
