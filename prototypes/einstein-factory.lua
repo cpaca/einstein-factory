@@ -73,8 +73,8 @@ data:extend({
 prereq_tech_name = "promethium-science-pack"
 prereq_tech = data.raw["technology"][prereq_tech_name]
 tech_price = {
-    ingredients = prereq_tech["ingredients"],
-    time = prereq_tech["time"]
+    ingredients = prereq_tech["unit"]["ingredients"],
+    time = prereq_tech["unit"]["time"]
 }
 -- Currently want *1, might change to *2 or *5 in the future though.
 price_mult = 1
