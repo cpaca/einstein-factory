@@ -1,5 +1,5 @@
 -- TODO: Actual graphics
-graphics = require("einstein-factory-graphics")
+graphics = require("prototypes.einstein-factory-graphics")
 
 -- Item
 data:extend({
