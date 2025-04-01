@@ -21,6 +21,7 @@ data:extend({
     {
         type = "recipe",
         name = "einstein-factory",
+        category = "crafting-with-fluid",
         enabled = false,
         energy_required = 60,
         ingredients = {
@@ -41,7 +42,6 @@ data:extend({
     {
         type = "assembling-machine",
         name = "einstein-factory",
-        category = "crafting-with-fluid",
         icon = einstein_factory_icon, -- TODO: get the quantum stabilizer icon
         icon_size = 64,
         flags = {"placeable-neutral", "placeable-player"},
