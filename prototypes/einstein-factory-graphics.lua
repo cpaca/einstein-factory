@@ -17,7 +17,7 @@ out["graphics_set"] = {
                 height_in_frames = 8
             },
             { -- Stripe: Frames 65-100 
-                filename = "__einstein-factory__/graphics/einstein-factory/quantum-stabilizer-hr-animation-1.png",
+                filename = "__einstein-factory__/graphics/einstein-factory/quantum-stabilizer-hr-animation-2.png",
                 width_in_frames = 8,
                 height_in_frames = 5
             }
