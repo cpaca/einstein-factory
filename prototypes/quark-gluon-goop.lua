@@ -6,6 +6,7 @@ data:extend({
         icon = "__einstein-factory__/graphics/quark-gluon-goop/icon.png",
         subgroup = "intermediate-product",
         stack_size = 1000000, -- 1 million, aka 1KG
+        weight = 1 -- would be 0.001 if I could
     }
 })
 -- Recipe
