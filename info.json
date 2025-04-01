@@ -7,7 +7,8 @@
   "description": "Mod that adds a factory following Einstein's equation (E=mc^2) to factorio. Convert electricity to matter! Just watch the electricity cost.",
   "factorio_version": "2.0",
   "dependencies": [
-    "base"
+    "base",
+    "space-age"
   ],
   "quality_required": false,
   "rail_bridges_required": false,
