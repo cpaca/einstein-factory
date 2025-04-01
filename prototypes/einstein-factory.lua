@@ -1,14 +1,13 @@
 -- TODO: Actual graphics
-einstein_factory_icon = data.raw["assembling-machine"]["cryogenic-plant"]["icon"]
-einstein_factory_graphics = data.raw["assembling-machine"]["cryogenic-plant"]["graphics_set"]
+graphics = require("einstein-factory-graphics")
 
 -- Item
 data:extend({
     {
         type = "item",
         name = "einstein-factory",
-        icon = einstein_factory_icon,
-        icon_size = 64,
+        icon = graphics["icon"],
+        icon_size = graphics["icon_size"],
         subgroup = "production-machine",
         order = "c[einstein-factory]",
         place_result = "einstein-factory",
@@ -42,7 +41,7 @@ data:extend({
     {
         type = "assembling-machine",
         name = "einstein-factory",
-        icon = einstein_factory_icon, -- TODO: get the quantum stabilizer icon
+        icon = graphics["icon"], -- TODO: get the quantum stabilizer icon
         icon_size = 64,
         flags = {"placeable-neutral", "placeable-player"},
         minable = {mining_time = 0.2, result = "einstein-factory"},
@@ -63,7 +62,7 @@ data:extend({
             emissions_per_minute = {} -- I mean emissions don't really make sense, what would be emitting? CO2?
         },
         energy_usage = "90GW",
-        graphics_set = einstein_factory_graphics,
+        graphics_set = graphics["graphics_set"],
         fluid_boxes = {}, -- # no fluid input or output expected for this one.
         -- fluid_boxes_off_when_no_fluid_recipe = false,
     }
