@@ -35,7 +35,8 @@ out["graphics_set"] = {
                 width = 900,
                 height = 420,
                 scale = 0.5,
-                draw_as_shadow = true
+                draw_as_shadow = true,
+                repeat_count = 100
             }
         }
     },
