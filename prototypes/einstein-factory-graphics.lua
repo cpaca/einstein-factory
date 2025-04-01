@@ -46,7 +46,8 @@ out["graphics_set"] = {
                 },
                 frame_count = 100,
                 width = 410,
-                height = 410
+                height = 410,
+                scale = 0.5
             }
         }
     }
