@@ -29,7 +29,7 @@ data:extend({
             {type = "item", name = "carbon-fiber", amount = 150},
             {type = "item", name = "superconductor", amount = 250},
             {type = "item", name = "quantum-processor", amount = 500},
-            {type = "item", name = "promethium-asteroid", amount = 100},
+            {type = "item", name = "promethium-asteroid-chunk", amount = 100},
             {type = "fluid", name = "fluoroketone-cold", amount = 1000},
         },
         results = {{type = "item", name = "einstein-factory", amount = 1}}
