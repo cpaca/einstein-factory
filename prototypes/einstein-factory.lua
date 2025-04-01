@@ -58,8 +58,9 @@ data:extend({
         energy_source = {
             type = "electric",
             usage_priority = "secondary-input",
-            emissions_per_minut = {} -- I mean emissions don't really make sense, what would be emitting? CO2?
+            emissions_per_minute = {} -- I mean emissions don't really make sense, what would be emitting? CO2?
         },
+        energy_usage = "90GW",
         graphics_set = einstein_factory_graphics,
         fluid_boxes = {}, -- # no fluid input or output expected for this one.
         -- fluid_boxes_off_when_no_fluid_recipe = false,
