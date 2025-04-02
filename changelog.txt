@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 2025-04-02
+  Features:
+    - Replicating holmium ore is now available
+  Bugfixes:
+    - Einstein factory can now be blueprinted
+    - Einstein factory recipe should not allow quality
+  Locale:
+    - Recipe name for item replication
+  Changes:
+    - Add replication recipe factory
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
 Date: 2025-04-02
   Bugfixes:
