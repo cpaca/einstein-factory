@@ -67,14 +67,15 @@ function add_replication_recipe(args)
         return "Could not get a valid item_name"
     end
 
-    -- here, item and item_name are likely valid
+    -- Here, item and item_name are likely valid
 
     -- This recipe is what will be given to data:extend
+    recipe_name = item_name .. "-qgg-replication" -- needed for the tech, too
     recipe = {
         type = "recipe",
-        name = item_name .. "-qgg-replication",
+        name = recipe_name,
         category = "cryogenics", 
-        enabled = true, -- TODO: default should be false (do this when the tech is added)
+        enabled = false, -- TODO: default should be false (do this when the tech is added)
         energy_required = 1,
         -- ingredients is set later 
         results = {{type="item", name=item_name, amount=1}},
@@ -126,7 +127,8 @@ function add_replication_recipe(args)
     -- Add the replication recipe:
     data:extend({recipe})
 
-    -- TODO: Edit the tech
+    -- Edit the tech
+    table.insert(einstein_factory_tech["effects"], {type="unlock-recipe", recipe=recipe_name})
 end
 
 return add_replication_recipe
