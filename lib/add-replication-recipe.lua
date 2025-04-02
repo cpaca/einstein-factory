@@ -7,33 +7,39 @@ function get_localised_item_name(item)
 
     -- Check 1: Search for a given localised_item_name
     localised_item_name = item["localised_item_name"] or {}
-    if localised_item_name ~= {} then
+    if table_size(localised_item_name) ~= 0 then
+        -- log("Used localised item name 1")
         return localised_item_name
     end
 
     -- Checks 2 and 3 require a place_result
     place_result = item["place_result"] or {}
-    if place_result ~= {} then
+    if table_size(place_result) ~= 0 then
         localised_name = place_result["localised_name"] or {}
-        if localised_name ~= {} then
+        if table_size(localised_name) ~= 0 then
+            -- log("Used localised item name 2")
             return localised_name
         else
+            -- log("Used localised item name 3")
             return {"entity-name." .. place_result["name"]}
         end
     end
 
     -- Checks 4 and 5 require a placed_as_equipment_result
     placed_as_equipment_result = item["placed_as_equipment_result"] or {}
-    if placed_as_equipment_result ~= {} then
+    if table_size(placed_as_equipment_result) ~= 0 then
         localised_name = placed_as_equipment_result["localised_name"] or {}
-        if localised_name ~= {} then
+        if table_size(localised_name) ~= 0 then
+            -- log("Used localised item name 4")
             return localised_name
         else
+            -- log("Used localised item name 5")
             return {"equipment-name." .. placed_as_equipment_result["name"]}
         end
     end
 
     -- Check 6 is the "final fallback" where it gives up:
+    -- log("Used localised item name 6")
     return {"item-name." .. item["name"]}
 end
 
@@ -137,6 +143,8 @@ function add_replication_recipe(args)
 
     -- Calculate the recipe's localised_name
     localised_item_name = get_localised_item_name(item)
+    log("Localised item name:")
+    log(serpent.block(localised_item_name))
     recipe["localised_name"] = {"recipe-name.qgg-item-replication", localised_item_name}
 
     -- Here, we start manipulating things in data.lua
