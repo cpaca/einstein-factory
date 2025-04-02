@@ -44,6 +44,7 @@ data:extend({
         enabled = false,
         ingredients = {}, -- No ingredients. Create matter out of nothing.
         results = {{type="item", name="quark-gluon-goop-1mg", amount=1}},
+        order = "c[qgg]-1",
         maximum_productivity=0,
         hide_from_player_crafting = false,
         allow_consumption = false,
@@ -62,6 +63,7 @@ data:extend({
         enabled = false,
         ingredients = {{type="item", name="quark-gluon-goop-1mg", amount=1000}}, 
         results = {{type="item", name="quark-gluon-goop-1g", amount=1}},
+        order = "c[qgg]-2",
         maximum_productivity=0,
         hide_from_player_crafting = false,
         allow_consumption = true,
@@ -80,6 +82,7 @@ data:extend({
         enabled = false,
         ingredients = {{type="item", name="quark-gluon-goop-1g", amount=1000}}, 
         results = {{type="item", name="quark-gluon-goop-1kg", amount=1}},
+        order = "c[qgg]-3",
         maximum_productivity=0,
         hide_from_player_crafting = false,
         allow_consumption = true,
