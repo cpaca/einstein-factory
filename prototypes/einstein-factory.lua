@@ -33,6 +33,7 @@ data:extend({
             {type = "fluid", name = "fluoroketone-cold", amount = 1000},
         },
         results = {{type = "item", name = "einstein-factory", amount = 1}},
+        auto_recycle = false,
         allow_consumption = true,
         allow_speed = true,
         allow_productivity = false,
