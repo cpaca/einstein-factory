@@ -41,6 +41,7 @@ function add_replication_recipe(args)
     -- Parameters:
     -- item or item_name: Either a data.raw["item"][item_name] object, or the name of an item that is already in data.raw.
     -- weight: If this is provided, this weight (in grams) will be used as the object's effective weight.
+    -- creation: If this is truthy (ie: not nil or false), the recipe added will be creation, not duplication (ie: create from nothing)
     -- Return type:
     -- If this returns the empty string "", then adding a replication recipe for the item was successful.
     -- If anything else is returned, then the return value is a message about why adding a replication recipe failed.
@@ -71,6 +72,12 @@ function add_replication_recipe(args)
 
     -- This recipe is what will be given to data:extend
     recipe_name = item_name .. "-qgg-replication" -- needed for the tech, too
+    is_replication = not args["creation"]
+    if is_replication then
+        num_results = 2
+    else
+        num_results = 1
+    end
     recipe = {
         type = "recipe",
         name = recipe_name,
@@ -78,7 +85,7 @@ function add_replication_recipe(args)
         enabled = false, -- TODO: default should be false (do this when the tech is added)
         energy_required = 1,
         -- ingredients is set later 
-        results = {{type="item", name=item_name, amount=1}},
+        results = {{type="item", name=item_name, amount=num_results}},
         hide_from_player_crafting = true,
         auto_recycle = false,
         allow_consumption = true,
@@ -108,7 +115,16 @@ function add_replication_recipe(args)
     end
     
     -- here, weight is a valid number (is the item's weight)
-    recipe["ingredients"] = {{type="item", name="quark-gluon-goop-1mg", amount=weight*1000}}
+    if is_replication then
+        ingredients = {
+            {type="item", name=item_name, amount=1},
+            {type="item", name="quark-gluon-goop-1mg", amount=weight*1000}
+        }
+    else
+        -- creation out of nothing, not duplicating
+        ingredients = {{type="item", name="quark-gluon-goop-1mg", amount=weight*1000}}
+    end
+    recipe["ingredients"] = ingredients
 
     -- validate the tech:
     if type(einstein_factory_tech) ~= "table" then
