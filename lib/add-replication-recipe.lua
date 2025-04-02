@@ -129,6 +129,9 @@ function add_replication_recipe(args)
 
     -- Edit the tech
     table.insert(einstein_factory_tech["effects"], {type="unlock-recipe", recipe=recipe_name})
+
+    -- Successfully added recipe!
+    return ""
 end
 
 return add_replication_recipe
