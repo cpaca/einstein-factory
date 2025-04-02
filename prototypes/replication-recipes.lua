@@ -1,4 +1,4 @@
-add_replication_recipe = require("lib.add_replication_recipe")
+add_replication_recipe = require("lib.add-replication-recipe")
 
 function assert_add_replication(item_name)
     message = add_replication_recipe({item_name=item_name})
