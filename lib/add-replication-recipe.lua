@@ -92,7 +92,7 @@ function add_replication_recipe(args)
         energy_required = 1,
         -- ingredients is set later 
         results = {{type="item", name=item_name, amount=num_results}},
-        hide_from_player_crafting = true,
+        hide_from_player_crafting = false,
         auto_recycle = false,
         allow_consumption = true,
         allow_speed = true,
@@ -121,14 +121,21 @@ function add_replication_recipe(args)
     end
     
     -- here, weight is a valid number (is the item's weight)
+    ingredients = {}
     if is_replication then
-        ingredients = {
-            {type="item", name=item_name, amount=1},
-            {type="item", name="quark-gluon-goop-1mg", amount=weight*1000}
-        }
-    else
-        -- creation out of nothing, not duplicating
-        ingredients = {{type="item", name="quark-gluon-goop-1mg", amount=weight*1000}}
+        table.insert(ingredients, {type="item", name=item_name, amount=1})
+    end
+    weight_mg = (weight / 1)       % 1000
+    weight_g =  (weight / 1000)    % 1000
+    weight_kg = (weight / 1000000) % 1000
+    if weight_mg >= 1 then
+        table.insert(ingredients, {type="item", name="quark-gluon-goop-1mg", amount=math.floor(weight_mg)})
+    end
+    if weight_g >= 1 then
+        table.insert(ingredients, {type="item", name="quark-gluon-goop-1g", amount=math.floor(weight_g)})
+    end
+    if weight_kg >= 1 then
+        table.insert(ingredients, {type="item", name="quark-gluon-goop-1kg", amount=math.floor(weight_kg)})
     end
     recipe["ingredients"] = ingredients
 

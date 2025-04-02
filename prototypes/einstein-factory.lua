@@ -101,6 +101,8 @@ data:extend({
         effects = {
             {type = "unlock-recipe", recipe = "einstein-factory"},
             {type = "unlock-recipe", recipe = "quark-gluon-goop-1mg"},
+            {type = "unlock-recipe", recipe = "quark-gluon-goop-1g"},
+            {type = "unlock-recipe", recipe = "quark-gluon-goop-1kg"},
         },
         prerequisites = {prereq_tech_name},
         unit = tech_price
