@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 2025-04-02
+  Bugfixes:
+    - Attempt to stop quality einstein factories
+    - Disable recyclers on einstein factories
+  Locale:
+    - Add info about quality not working on einstein factories
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2025-04-01
   Features:
