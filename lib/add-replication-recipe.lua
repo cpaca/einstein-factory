@@ -137,7 +137,7 @@ function add_replication_recipe(args)
 
     -- Calculate the recipe's localised_name
     localised_item_name = get_localised_item_name(item)
-    recipe["localised_name"] = {"qgg-item-replication", localised_item_name}
+    recipe["localised_name"] = {"recipe-name.qgg-item-replication", localised_item_name}
 
     -- Here, we start manipulating things in data.lua
     -- Add the replication recipe:
