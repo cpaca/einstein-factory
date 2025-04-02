@@ -43,6 +43,24 @@ function get_localised_item_name(item)
     return {"item-name." .. item["name"]}
 end
 
+function get_weights(weight_mg)
+    out = {}
+    -- get grams from milligrams
+    weight_g  = weight_mg / 1000
+    weight_mg = weight_mg % 1000
+    out["weight_mg"] = math.floor(weight_mg)
+
+    -- get kilograms from grams
+    weight_kg = weight_g / 1000
+    weight_g  = weight_g % 1000
+    out["weight_g"] = math.floor(weight_g)
+
+    -- Final weight: Just use it directly
+    out["weight_kg"] = math.floor(weight_kg)
+
+    return out
+end
+
 function add_replication_recipe(args) 
     -- Parameters:
     -- item or item_name: Either a data.raw["item"][item_name] object, or the name of an item that is already in data.raw.
@@ -120,22 +138,23 @@ function add_replication_recipe(args)
         return ("Couldn't calculate a weight for item " .. item_name)
     end
     
-    -- here, weight is a valid number (is the item's weight)
+    -- here, weight is a valid number (is the item's weight, in grams)
     ingredients = {}
     if is_replication then
         table.insert(ingredients, {type="item", name=item_name, amount=1})
     end
-    weight_mg = (weight / 1)       % 1000
-    weight_g =  (weight / 1000)    % 1000
-    weight_kg = (weight / 1000000) % 1000
+    weights = get_weights(weight * 1000)
+    weight_mg = weights["weight_mg"]
+    weight_g =  weights["weight_g"]
+    weight_kg = weights["weight_kg"]
     if weight_mg >= 1 then
-        table.insert(ingredients, {type="item", name="quark-gluon-goop-1mg", amount=math.floor(weight_mg)})
+        table.insert(ingredients, {type="item", name="quark-gluon-goop-1mg", amount=weight_mg})
     end
     if weight_g >= 1 then
-        table.insert(ingredients, {type="item", name="quark-gluon-goop-1g", amount=math.floor(weight_g)})
+        table.insert(ingredients, {type="item", name="quark-gluon-goop-1g", amount=weight_g})
     end
     if weight_kg >= 1 then
-        table.insert(ingredients, {type="item", name="quark-gluon-goop-1kg", amount=math.floor(weight_kg)})
+        table.insert(ingredients, {type="item", name="quark-gluon-goop-1kg", amount=weight_kg})
     end
     recipe["ingredients"] = ingredients
 
