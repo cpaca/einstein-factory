@@ -38,7 +38,7 @@ data:extend({
         allow_speed = true,
         allow_productivity = false,
         allow_pollution = true,
-        allow_quality = true
+        allow_quality = false,
     }
 })
 
@@ -49,7 +49,7 @@ data:extend({
         name = "einstein-factory",
         icon = graphics["icon"], -- TODO: get the quantum stabilizer icon
         icon_size = 64,
-        flags = {"placeable-neutral", "placeable-player"},
+        flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {mining_time = 0.2, result = "einstein-factory"},
         fast_replaceable_group = "einstein-factory",
         max_health = 500,
@@ -101,6 +101,8 @@ data:extend({
         effects = {
             {type = "unlock-recipe", recipe = "einstein-factory"},
             {type = "unlock-recipe", recipe = "quark-gluon-goop-1mg"},
+            {type = "unlock-recipe", recipe = "quark-gluon-goop-1g"},
+            {type = "unlock-recipe", recipe = "quark-gluon-goop-1kg"},
         },
         prerequisites = {prereq_tech_name},
         unit = tech_price
