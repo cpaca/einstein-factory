@@ -174,6 +174,7 @@ function add_replication_recipe(args)
     recipe["localised_name"] = {"recipe-name.qgg-item-replication", localised_item_name}
 
     -- Here, we start manipulating things in data.lua
+    -- Because of that, DO NOT return ANYTHING here. Except at the end, when everything is complete, where you can return ""
     -- Add the replication recipe:
     data:extend({recipe})
 
