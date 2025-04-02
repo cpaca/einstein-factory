@@ -38,7 +38,7 @@ data:extend({
         allow_speed = true,
         allow_productivity = false,
         allow_pollution = true,
-        allow_quality = true
+        allow_quality = false,
     }
 })
 
