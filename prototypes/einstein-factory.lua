@@ -49,7 +49,7 @@ data:extend({
         name = "einstein-factory",
         icon = graphics["icon"], -- TODO: get the quantum stabilizer icon
         icon_size = 64,
-        flags = {"placeable-neutral", "placeable-player"},
+        flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {mining_time = 0.2, result = "einstein-factory"},
         fast_replaceable_group = "einstein-factory",
         max_health = 500,
